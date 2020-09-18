@@ -1,0 +1,43 @@
+.row {
+  color: white;
+  margin-left: 20px;
+}
+.row_posters {
+  /*to align movie posters row wise in the div we use  flex box*/
+  display: flex;
+  /*to  scroll movie posters inside a fixed div width   use overflow*/
+  overflow-y: hidden;
+  overflow-x: scroll;
+  /*get room for image transformation on hover for each movie poster*/
+  padding: 20px;
+}
+
+.row_posters::-webkit-scrollbar {
+  display: none;
+}
+
+.row_poster {
+  /*to keep the original aspect ration use object fit contain*/
+  object-fit: contain;
+  width: 100%;
+  max-height: 100px;
+  /*add gap  between each poster*/
+  margin-right: 10px;
+  /*use transition to add delay when each poster changes*/
+  transition: transform 450ms;
+}
+
+/*use hover to slightly enlarge poster on hover*/
+.row_poster:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+.row_posterLarge {
+  max-height: 250px;
+}
+
+.row_posterLarge:hover {
+  transform: scale(1.09);
+  opacity: 1;
+}
